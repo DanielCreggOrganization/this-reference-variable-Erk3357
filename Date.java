@@ -7,6 +7,7 @@ public class Date {
     int day;
     int month;
     int year;
+    String event;
 
     // Default Constructor (No Parameters)
     public Date(){
@@ -16,27 +17,33 @@ public class Date {
     }
 
     // Parameterized constructor (3 Parameters)
-    public Date(int newDay, int newMonth, int newYear){
-        day = newDay;
-        month = newMonth;
-        year = newYear;
+    public Date(int day, int month, int year){
+        this(day, month);
+        this.year = year;
     }
     
     // Parameterized constructor (2 Parameters)
-    public Date(int newDay, int newMonth){
-        day = newDay;
-        month = newMonth;
+    public Date(int day, int month){
+        this(day);
+        this.month = month;
     }
     
     // Parameterized constructor (1 Parameter)
-    public Date(int newDay){
-        day = newDay;
+    public Date(int day){
+        this.day = day;
+        this.year = 2000;
+    }
+
+    // Parameterized constructor (3 Parameters)
+    public Date(int day, int month, int year, String event){
+        this(day, month, year);
+        this.event = event;
     }
     
     // A simple print method
     public void printDate(){
         // Print the date like this: day/month/year
-        System.out.println(day+"/"+month+"/"+"/"+year);
+        System.out.println(this.day+"/"+this.month+"/"+this.year+" "+this.event);
     }
 
 }
